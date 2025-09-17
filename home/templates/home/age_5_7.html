@@ -1,0 +1,9 @@
+{% extends "home/base.html" %}
+{% block content %}
+<h2>Age 5-7 Quizzes</h2>
+<ul>
+  {% for quiz in quizzes %}
+    <li><a href="{% url 'quiz' quiz.pk %}">{{ quiz.question }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}

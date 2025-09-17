@@ -1,0 +1,16 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Quiz</h2>
+    <form method="post">
+        {% csrf_token %}
+        <p><strong>{{ quiz.question }}</strong></p>
+        <label><input type="radio" name="answer" value="{{ quiz.option1 }}"> {{ quiz.option1 }}</label><br>
+        <label><input type="radio" name="answer" value="{{ quiz.option2 }}"> {{ quiz.option2 }}</label><br>
+        <label><input type="radio" name="answer" value="{{ quiz.option3 }}"> {{ quiz.option3 }}</label><br>
+        <label><input type="radio" name="answer" value="{{ quiz.option4 }}"> {{ quiz.option4 }}</label><br>
+        <button type="submit">Submit Answer</button>
+    </form>
+</div>
+{% endblock %}
